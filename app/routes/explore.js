@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import LastFM from 'npm:last.fm.api';
 import LastFMAPI from 'npm:lastfmapi';
 
 export default Ember.Route.extend({
