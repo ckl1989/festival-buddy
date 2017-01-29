@@ -1,0 +1,14 @@
+<h2> Spotify Playlist Generator </h2>
+
+{{#if spotify.isAuthenticated}}
+  <nav>
+    {{#link-to "playlist.custom"}}Custom Playlist{{/link-to}}
+    {{#link-to "playlist.recommended"}}Recommended Playlist{{/link-to}}
+  </nav>
+{{else}}
+  <button {{action "login"}}> Click here to log in </button>
+{{/if}}
+
+
+
+{{outlet}}

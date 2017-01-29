@@ -1,0 +1,22 @@
+<h2> Explore Artists </h2>
+
+<h4> Options to filter artists by genre will be here </h4>
+
+<div class="col-md-4">
+  {{artist-list title='Artist List' artists=filteredArtists selectArtist=(action "changeSelectedArtist")}}
+</div>
+
+<!-- {{playlist-filter}} -->
+<div class="col-md-8">
+  {{#if selectedArtist}}
+    {{#if selectedArtist.profile}}
+      {{artist-profile artist=selectedArtist}}
+    {{else}}
+      <h4> Sorry, artist info not available at this time! </h4>
+    {{/if}}
+  {{else}}
+    <h3> Select an artist from the list to view their profile</h3>
+  {{/if}}
+</div>
+
+{{outlet}}

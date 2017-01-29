@@ -1,0 +1,13 @@
+<h2> {{title}} </h2>
+
+<div style="height:100vh">
+  {{#ember-scrollable}}
+    <ul>
+      {{#each artists as |artist|}}
+        <li><button {{action 'selectArtist' artist}}> {{artist.name}} </button> </li>
+      {{/each}}
+    </ul>
+
+
+  {{/ember-scrollable}}
+</div>

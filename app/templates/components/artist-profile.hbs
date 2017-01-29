@@ -1,0 +1,39 @@
+<div style="height:100vh">
+
+  <h2> Artist Profile </h2>
+{{#ember-scrollable}}
+  <h3> Artist Name: {{artist.name}} </h3>
+
+  <div id="profile-picture">
+    <img style="max-width: 90%; display: block; margin-left: auto; margin-right: auto" src={{artist.profile.images.[0].url}}>
+  </div>
+
+  <h4> Bio </h4>
+
+  {{#if bioFull}}
+    <p> {{artist.profile.bioFull}}</p>
+    <button {{action 'toggleBioFull'}}> Show less... </button>
+  {{else}}
+    <p> {{artist.profile.bioShort}} </p>
+    <button {{action 'toggleBioFull'}}> Show more... </button>
+  {{/if}}
+
+  <h4> Genres </h4>
+
+  <ul>
+    {{#each artist.profile.genres as |genre|}}
+      <li> {{genre}} </li>
+    {{/each}}
+  </ul>
+
+  <h4> Top Songs </h4>
+
+  <ol>
+    {{#each artist.profile.topTracks as |track|}}
+      <li><iframe src="https://embed.spotify.com/?uri={{track.uri}}"
+        width="500" height="80" frameborder="0" allowtransparency="true"></iframe></li>
+    {{/each}}
+  </ol>
+
+{{/ember-scrollable}}
+</div>

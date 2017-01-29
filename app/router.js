@@ -7,6 +7,12 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('playlist', function() {
+    this.route('callback');
+    this.route('custom');
+    this.route('recommended');
+  });
+  this.route('explore');
 });
 
 export default Router;
